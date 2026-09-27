@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="UTF-8"><title>Sentinel — CyberSOC Monitoring</title><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"></head>
+<body class="dark-soc">
+    <header class="hdr"><h2>🛡️ Sentinel CyberSOC</h2><div class="score">Security Score: <span class="grn">94/100</span></div></header>
+    <main class="wrap">
+        <div class="grid">
+            <div class="card"><h3>Logs Ingestés (24h)</h3><p class="val">184,920</p></div>
+            <div class="card"><h3>Alertes Menaces</h3><p class="val warn">2 Suspectes</p></div>
+            <div class="card"><h3>Sessions MFA</h3><p class="val">24 Valides</p></div>
+        </div>
+
+        <!-- WOW FEATURE: Cyber Threat Vector Matrix & One-Click Quarantine -->
+        <div class="card threat-card">
+            <div class="threat-header">
+                <h3>🌐 Radar d'Attaques Globale & Vectors Dangers</h3>
+                <button class="btn-quarantine" onclick="quarantineIP()">⛔ Mettre en Quarantaine l'IP Suspecte (198.51.100.44)</button>
+            </div>
+            <div class="threat-matrix">
+                <div class="threat-item red">🚨 Attaque Brute-Force SSH — Origine: 198.51.100.44 (42 tentatives/min)</div>
+                <div class="threat-item yellow">⚠️ Tentative Escalade Privilèges — Account 'testuser'</div>
+            </div>
+            <div id="quarantine-status" style="display:none;" class="quarantine-alert"></div>
+        </div>
+
+        <div class="card logs">
+            <h3>Flux des Événements en Direct</h3>
+            <p>🟢 [19:35:10] LOGIN_SUCCESS — Admin (192.168.1.10)</p>
+            <p>🟡 [19:28:44] WARN_FAILED_AUTH — User 'guest' (5 tentatives)</p>
+        </div>
+    </main>
+    <script src="app.js"></script>
+</body></html>

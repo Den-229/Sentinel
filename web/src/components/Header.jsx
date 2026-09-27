@@ -1,0 +1,1 @@
+import React from 'react'; export default function Header({ pageTitle }) { return (<header className='top-header'><div><h1>{pageTitle || 'Sentinel System Portal'}</h1><p className='subtitle'>Monitoring Cybersécurité PME & CyberSOC</p></div><div className='status-badge'>🟢 Backend API Connected</div></header>); }
